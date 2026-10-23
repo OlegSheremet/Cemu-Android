@@ -39,7 +39,7 @@ if (ENABLE_VCPKG)
 
 	if(UNIX AND NOT APPLE AND NOT VCPKG_TARGET_ANDROID)
 		set(VCPKG_OVERLAY_PORTS "${CMAKE_CURRENT_LIST_DIR}/dependencies/vcpkg_overlay_ports_linux")
-	elseif(APPLE)
+	elseif(APPLE AND NOT VCPKG_TARGET_ANDROID)
 		set(VCPKG_OVERLAY_PORTS "${CMAKE_CURRENT_LIST_DIR}/dependencies/vcpkg_overlay_ports_mac")
 	else()
 		set(VCPKG_OVERLAY_PORTS "${CMAKE_CURRENT_LIST_DIR}/dependencies/vcpkg_overlay_ports")

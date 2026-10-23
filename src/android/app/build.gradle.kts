@@ -71,6 +71,11 @@ android {
     buildTypes {
         debug {
             applicationIdSuffix = ".debug"
+            externalNativeBuild {
+                cmake {
+                    arguments.add("-DCMAKE_BUILD_TYPE=RelWithDebInfo")
+                }
+            }
         }
         create("githubRelease") {
             if (keystoreFilePath != null) {
